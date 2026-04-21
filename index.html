@@ -490,8 +490,8 @@
       html, body {
         background: #fff !important;
         color: #000 !important;
-        font-size: 7.75pt;
-        line-height: 1.22;
+        font-size: 9pt;
+        line-height: 1.3;
       }
 
       /* Hide all interactive / decorative UI */
@@ -504,48 +504,72 @@
       .schedule-footer,
       .toggle-chevron,
       .race-pill,
-      .header-logos,
       .header-right { display: none !important; }
 
       .page-wrap { max-width: 100%; padding: 0; margin: 0; }
 
-      /* ── Compact title row ── */
+      /* ── Header: title left, logos right ── */
       .schedule-header {
-        padding: 0 0 4pt 0 !important;
-        margin: 0 0 6pt 0 !important;
+        padding: 0 0 6pt 0 !important;
+        margin: 0 0 8pt 0 !important;
         border-bottom: 1.5pt solid #0D1B2A !important;
-        display: block !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 14pt !important;
         background: #fff !important;
         position: static !important;
       }
       .schedule-header::after { display: none !important; }
-      .header-titles { text-align: left; }
+      .header-titles {
+        text-align: left;
+        flex: 1;
+        min-width: 0;
+      }
       .header-eyebrow {
-        font-size: 6.5pt !important;
+        font-size: 7pt !important;
         color: #E11D48 !important;
-        letter-spacing: 0.18em;
-        margin-bottom: 1pt !important;
+        letter-spacing: 0.2em;
+        margin-bottom: 2pt !important;
       }
       .header-title {
-        font-size: 13pt !important;
+        font-size: 15pt !important;
         font-weight: 800 !important;
         color: #0D1B2A !important;
         letter-spacing: -0.015em;
         line-height: 1.1;
       }
       .header-sub {
-        font-size: 7pt !important;
+        font-size: 8pt !important;
         color: #333 !important;
-        margin-top: 1.5pt !important;
+        margin-top: 3pt !important;
+      }
+      .header-logos {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 10pt !important;
+        flex-shrink: 0 !important;
+      }
+      .logo-rwo {
+        height: 38pt !important;
+        width: auto !important;
+        object-fit: contain !important;
+      }
+      .logo-event {
+        height: 34pt !important;
+        width: auto !important;
+        object-fit: contain !important;
       }
 
-      /* ── 2-column schedule body ── */
+      /* ── 2-column schedule body with clear gap ── */
       #schedule-container {
         display: block !important;
         padding: 0 !important;
         gap: 0 !important;
         column-count: 2;
-        column-gap: 10pt;
+        column-gap: 24pt;
         column-fill: balance;
       }
 
@@ -555,7 +579,7 @@
         border: none !important;
         border-radius: 0 !important;
         box-shadow: none !important;
-        margin: 0 0 3pt 0 !important;
+        margin: 0 0 5pt 0 !important;
         break-inside: avoid !important;
         page-break-inside: avoid !important;
       }
@@ -564,27 +588,27 @@
       .day-header {
         background: #0D1B2A !important;
         color: #fff !important;
-        padding: 2.5pt 5pt !important;
+        padding: 3.5pt 7pt !important;
         border-radius: 0 !important;
       }
-      .day-header-left { gap: 5pt !important; }
+      .day-header-left { gap: 6pt !important; }
       .day-name {
-        font-size: 8.5pt !important;
+        font-size: 10pt !important;
         color: #fff !important;
         font-weight: 800 !important;
         text-transform: uppercase;
         letter-spacing: 0.05em;
       }
       .day-date {
-        font-size: 7pt !important;
-        color: rgba(255,255,255,0.72) !important;
+        font-size: 8pt !important;
+        color: rgba(255,255,255,0.75) !important;
       }
       .race-day-tag {
         background: #E11D48 !important;
         color: #fff !important;
-        font-size: 6pt !important;
+        font-size: 7pt !important;
         font-weight: 800 !important;
-        padding: 1pt 4pt !important;
+        padding: 1.5pt 5pt !important;
         border-radius: 2pt !important;
         letter-spacing: 0.06em;
       }
@@ -598,9 +622,9 @@
       /* ── Event rows: tight inline layout ── */
       .event-row {
         display: grid !important;
-        grid-template-columns: 46pt 1fr !important;
-        gap: 4pt !important;
-        padding: 1.2pt 5pt !important;
+        grid-template-columns: 52pt 1fr !important;
+        gap: 5pt !important;
+        padding: 2pt 7pt !important;
         border-bottom: 0.25pt solid #e5e5ea !important;
         border-left: none !important;
         background: #fff !important;
@@ -610,22 +634,22 @@
       .event-row:last-child { border-bottom: none !important; }
 
       .event-time {
-        font-size: 6.75pt !important;
+        font-size: 7.75pt !important;
         font-weight: 600 !important;
         color: #333 !important;
         letter-spacing: -0.01em;
       }
       .event-name {
-        font-size: 7.5pt !important;
+        font-size: 8.5pt !important;
         font-weight: 500 !important;
         color: #000 !important;
-        line-height: 1.25;
+        line-height: 1.3;
       }
 
       /* Race-only accents */
       .event-row.race {
-        border-left: 1.5pt solid #E11D48 !important;
-        padding-left: 3.5pt !important;
+        border-left: 2pt solid #E11D48 !important;
+        padding-left: 5pt !important;
       }
       .event-row.race .event-time {
         color: #E11D48 !important;
@@ -639,9 +663,9 @@
       /* Collapse supplementary info inline/tight */
       .event-sponsor {
         display: inline !important;
-        font-size: 6.5pt !important;
+        font-size: 7.25pt !important;
         color: #555 !important;
-        margin: 0 0 0 3pt !important;
+        margin: 0 0 0 4pt !important;
       }
       .event-sponsor a {
         color: #555 !important;
@@ -649,28 +673,28 @@
         border: none !important;
       }
       .event-classes {
-        font-size: 6.5pt !important;
+        font-size: 7.25pt !important;
         font-weight: 700 !important;
         color: #E11D48 !important;
-        margin-top: 0.5pt !important;
-        line-height: 1.2;
+        margin-top: 1pt !important;
+        line-height: 1.25;
       }
       .event-location {
         display: inline !important;
-        font-size: 6.5pt !important;
+        font-size: 7.25pt !important;
         color: #555 !important;
-        margin: 0 0 0 3pt !important;
+        margin: 0 0 0 4pt !important;
       }
       .event-location::before { display: none !important; }
 
       /* Race section divider inside a day */
       .race-section-header {
-        padding: 2pt 5pt 0.5pt !important;
+        padding: 3pt 7pt 1pt !important;
         background: #fff !important;
         border-top: 0.5pt solid #eee !important;
       }
       .race-section-label {
-        font-size: 6pt !important;
+        font-size: 7pt !important;
         font-weight: 800 !important;
         color: #E11D48 !important;
         letter-spacing: 0.12em;
@@ -679,12 +703,12 @@
 
       /* Tiny footer disclaimer */
       .disclaimer {
-        margin: 5pt 0 0 0 !important;
-        padding: 3pt 6pt !important;
+        margin: 7pt 0 0 0 !important;
+        padding: 4pt 8pt !important;
         border: 0.5pt solid #ccc !important;
         border-radius: 0 !important;
         background: #fff !important;
-        font-size: 6.5pt !important;
+        font-size: 7.25pt !important;
         color: #333 !important;
         text-align: left !important;
       }
